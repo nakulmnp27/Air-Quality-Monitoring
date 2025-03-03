@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,14 +173,29 @@
 
         function checkThresholds(pm25, so2, co) {
             let warnings = "";
-            if (so2 > 0.5) {
-                warnings += `<div class="warning-box">⚠️ <b>High SO₂ Levels!</b> Sulfur dioxide can cause respiratory issues, lung damage, and worsen asthma.</div>`;
+            if (so2 > 3.3) {
+                warnings += `<div class="warning-box">⚠️ <b>🚨WARNING SO2 POLLUTANT INCREASED🚨<br><br>
+⚠Side Effects of SO₂ (Sulfur Dioxide)<br><br>
+🌡Throat and Eye Irritation – Causes burning sensations, coughing, and sore throat.<br>
+🌡Breathing Issues – Triggers asthma attacks and worsens lung diseases like COPD.<br><br>
+SO₂ Control🧑🏻‍🔬 – Sprinkling an alkaline solution neutralizes acidic gases, converting them into less harmful compounds.</div>`;
             }
             if (pm25 > 51) {
-                warnings += `<div class="warning-box">⚠️ <b>High PM2.5 Levels!</b> Fine particles can cause lung and heart diseases.</div>`;
+                warnings += `<div class="warning-box">⚠️ <b>🚨WARNING PM2.5 POLLUTANT INCREASED🚨<br><br>
+⚠Side Effects of PM2.5 (Fine Particulate Matter)<br>
+🌡Lung Damage – Penetrates deep into the lungs, causing inflammation and reducing lung function.<br>
+🌡Premature Death – Long-term exposure is linked to reduced life expectancy due to respiratory and cardiovascular diseases.<br><br>
+PM2.5 Control 🧑🏻‍🔬– Spraying water helps capture fine particulate matter, reducing its concentration in the air.</div>`;
             }
-            if (co > 0.29) {
-                warnings += `<div class="warning-box">⚠️ <b>High CO Levels!</b> Carbon monoxide exposure can cause dizziness and headaches.</div>`;
+            if (co > 0.7) {
+                warnings += `<div class="warning-box">⚠️ <b>High CO Levels!</b> 🚨WARNING: CO (Carbon Monoxide) POLLUTANT INCREASED🚨<br><br>
+
+⚠ Side Effects of CO (Carbon Monoxide):<br><br>
+🌡 Headaches and Dizziness – Reduces oxygen supply to the brain, causing confusion and fatigue.<br>
+🌡 Breathing Issues – Can lead to shortness of breath and worsen heart conditions.<br>
+🌡 Severe Poisoning – High exposure can cause unconsciousness and even be fatal.<br><br>
+
+🧑🏻‍🔬 CO Control – Using activated carbon filters helps absorb and remove carbon monoxide from the air, reducing its harmful effects.</div>`;
             }
 
             const warningContainer = document.getElementById("warning-container");
